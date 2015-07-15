@@ -5,7 +5,18 @@ class Organization
   field :public_name, type: String
   field :org_type, type: String
 
-
-  belongs_to :group_organization
+  embedded_in :group_organization
   embeds_many :locations
+
+  ORG_TYPES = {
+    SHOW_ROOM: 'show_room',
+    SERVICE: 'service',
+    DEALER: 'dealer'
+  }
+
+  ORG_TYPES.each do |k, v|
+    define_method "#{v}?" do
+      org_type == v
+    end
+  end
 end

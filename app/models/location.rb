@@ -4,5 +4,5 @@ class Location
   field :name, type: String
   field :address, type: String
 
-  belongs_to :organization
+  embedded_in :organization
 end
