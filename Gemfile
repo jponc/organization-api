@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
+gem 'sqlite3'
 
 group :development do
   gem 'better_errors'
@@ -26,5 +27,4 @@ end
 gem 'squeel'
 
 # MONGODB
-gem "mongoid"
-gem "bson_ext"
+gem "mongoid", "~> 4.0.0"
