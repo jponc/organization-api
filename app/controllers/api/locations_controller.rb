@@ -6,7 +6,6 @@ class Api::LocationsController < ApplicationController
     else
       render json: {msg: 'Group organization not found.'}
     end
-
   end
 
   private
