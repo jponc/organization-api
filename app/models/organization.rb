@@ -4,6 +4,7 @@ class Organization
   field :name, type: String
   field :public_name, type: String
   field :org_type, type: String
+  field :pricing_policy, type: String
 
   embedded_in :group_organization
   embeds_many :locations
@@ -12,6 +13,12 @@ class Organization
     SHOW_ROOM: 'show_room',
     SERVICE: 'service',
     DEALER: 'dealer'
+  }
+
+  PRICING_POLICIES = {
+    FLEXIBLE: 'Flexible',
+    FIXED: 'Fixed',
+    PRESTIGE: 'Prestige'
   }
 
   ORG_TYPES.each do |k, v|
