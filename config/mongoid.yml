@@ -1,0 +1,30 @@
+development:
+  # Configure available database sessions. (required)
+  sessions:
+    # Defines the default session. (required)
+    default:
+      database: organizations_api_development
+      hosts:
+        - localhost:27017
+      options:
+
+  options:
+
+staging:
+  sessions:
+    default:
+      database: organizations_api_staging
+      hosts:
+        - localhost:27017
+      options:
+
+test:
+  sessions:
+    default:
+      database: organizations_api_test
+      hosts:
+        - localhost:27017
+      options:
+        # consistency: :strong
+        # max_retries: 1
+        # retry_interval: 0
