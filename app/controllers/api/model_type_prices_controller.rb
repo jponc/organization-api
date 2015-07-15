@@ -3,12 +3,19 @@ class Api::ModelTypePricesController < ApplicationController
 
   def show
     group_org = get_group_org
-    if group_org.present?
 
-      render json: ['add service object here']
-    else
-      render json: {msg: 'Group organization not found.'}
-    end
+    resp =
+      if group_org.present?
+        Organization::ModelTypePriceComputation.new(
+          group_org: group_org,
+          model_type_name: params[:model_type_name],
+          base_price: params[:base_price]
+        ).compute
+      else
+        {msg: 'Group organization not found.'}
+      end
+
+    render json: resp
   end
 
   private
